@@ -3,8 +3,26 @@ import sys, os
 
 # Game Settings
 
+# Display Variables
+WIDTH, HEIGHT = 500, 500
+HW, HH = WIDTH/2, HEIGHT/2
+AREA = WIDTH * HEIGHT
+TITLE = "Pokemon Game"
+
+# Colors
+BLACK = (0, 0, 0, 255)
+WHITE = (255, 255, 255, 255)
+
 script_dir = sys.path[0]
-img_path = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - Brendan.PNG')
+wleft = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingLeft.PNG')
+wright = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingRight.PNG')
+wdown = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingDown.PNG')
+wup = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingUp.PNG')
+pwoods = os.path.join(scipt_dir, "Game Boy Advance - Pokemon Emerald - PetalburgWoodsScaled.PNG")
 
 FPS = 60
-MAIN_MALE_CHARACTER = SpriteSheet(img_path
+
+MAIN_MALE_CHARACTER_WALKING_LEFT = SpriteSheet(wleft, 1, 3)
+MAIN_MALE_CHARACTER_WALKING_RIGHT = SpriteSheet(wright, 1, 3)
+MAIN_MALE_CHARACTER_WALKING_DOWN = SpriteSheet(wdown, 1, 3)
+MAIN_MALE_CHARACTER_WALKING_UP = SpriteSheet(wup, 1, 3)

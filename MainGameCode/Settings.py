@@ -18,7 +18,7 @@ wleft = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWa
 wright = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingRight.PNG')
 wdown = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingDown.PNG')
 wup = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingUp.PNG')
-pwoods = os.path.join(scipt_dir, "Game Boy Advance - Pokemon Emerald - PetalburgWoodsScaled.PNG")
+pwoods = os.path.join(script_dir, "Game Boy Advance - Pokemon Emerald - PetalburgWoodsScaled.PNG")
 
 FPS = 60
 

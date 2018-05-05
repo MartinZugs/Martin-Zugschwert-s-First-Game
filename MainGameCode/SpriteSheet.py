@@ -4,7 +4,7 @@ class SpriteSheet:
 
     def __init__(self, filename, columns, rows):
 
-        self.sheet = pg.image.load(filename).convert()
+        self.sheet = pg.image.load(filename)
 
         self.columns = columns
         self.rows = rows

@@ -7,7 +7,7 @@ pg.init()
 CLOCK = pg.time.Clock()
 screen = pg.display.set_mode((WIDTH,HEIGHT))
 pg.display.set_caption(TITLE)
-pg.key.set_repeat(100,100)
+pg.key.set_repeat(100, 0)
 
 CCM = MAIN_MALE_CHARACTER_WALKING_DOWN
 
@@ -21,15 +21,13 @@ currentIndex = DIndex
 
 def events():
 
-    global Index
     global CCM
     global UIndex
     global DIndex
     global RIndex
     global LIndex
     global currentIndex
-    global screen
-    running = True
+
 
     for event in pg.event.get():
         if event.type == KEYDOWN:
@@ -52,18 +50,28 @@ def events():
                 CCM = MAIN_MALE_CHARACTER_WALKING_RIGHT
                 RIndex += 1
                 currentIndex = RIndex
+        else:
+            reset_index()
 
 
-def get_current_index():
-    return currentIndex
+def reset_index():
+     
+    global UIndex
+    global DIndex
+    global RIndex
+    global LIndex
+    global currentIndex
+    UIndex = 0
+    DIndex = 0
+    RIndex = 0
+    LIndex = 0
+    currentIndex = DIndex
 
 while True:
 
-    #currentIndex = 0
-
     screen.fill(BLACK)
 
-    CCM.draw(screen, get_current_index() % CCM.totalCellCount, HW, HH, CENTER_HANDLE)
+    CCM.draw(screen, currentIndex % CCM.totalCellCount, HW, HH, CENTER_HANDLE)
 
     events()
         

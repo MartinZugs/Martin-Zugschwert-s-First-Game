@@ -1,7 +1,9 @@
 from SpriteSheet import *
 import sys, os
+import pygame as pg
 
 # Game Settings
+pg.init()
 
 # Display Variables
 WIDTH, HEIGHT = 500, 500
@@ -14,11 +16,11 @@ BLACK = (0, 0, 0, 255)
 WHITE = (255, 255, 255, 255)
 
 script_dir = sys.path[0]
-wleft = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingLeft.PNG')
-wright = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingRight.PNG')
-wdown = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingDown.PNG')
-wup = os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingUp.PNG')
-pwoods = os.path.join(script_dir, "Game Boy Advance - Pokemon Emerald - PetalburgWoodsScaled.PNG")
+wleft = pg.image.load(os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingLeft.PNG'))
+wright = pg.image.load(os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingRight.PNG'))
+wdown = pg.image.load(os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingDown.PNG'))
+wup = pg.image.load(os.path.join(script_dir, 'Game Boy Advance - Pokemon Emerald - BrendanWalkingUp.PNG'))
+pwoods = pg.image.load(os.path.join(script_dir, "Game Boy Advance - Pokemon Emerald - PetalburgWoodsScaled.PNG"))
 
 FPS = 60
 

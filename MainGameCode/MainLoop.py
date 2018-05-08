@@ -17,6 +17,8 @@ UIndex = 0
 DIndex = 0
 RIndex = 0
 LIndex = 0
+x = 0
+y = 0
 currentIndex = DIndex
 
 def events():
@@ -27,6 +29,8 @@ def events():
     global RIndex
     global LIndex
     global currentIndex
+    global x
+    global y
 
 
     for event in pg.event.get():
@@ -38,18 +42,22 @@ def events():
                 CCM = MAIN_MALE_CHARACTER_WALKING_UP
                 UIndex += 1
                 currentIndex = UIndex
+                y = y + 5
             elif event.key == K_a:
                 CCM = MAIN_MALE_CHARACTER_WALKING_LEFT
                 LIndex += 1
                 currentIndex = LIndex
+                x = x + 5
             elif event.key == K_s:
                 CCM = MAIN_MALE_CHARACTER_WALKING_DOWN
                 DIndex += 1
                 currentIndex = DIndex
+                y = y - 5
             elif event.key == K_d:
                 CCM = MAIN_MALE_CHARACTER_WALKING_RIGHT
                 RIndex += 1
                 currentIndex = RIndex
+                x = x - 5
         else:
             reset_index()
 
@@ -70,6 +78,7 @@ def reset_index():
 while True:
 
     screen.fill(BLACK)
+    screen.blit(pwoods, (x,y))
 
     CCM.draw(screen, currentIndex % CCM.totalCellCount, HW, HH, CENTER_HANDLE)
 
